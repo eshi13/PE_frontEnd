@@ -7,6 +7,7 @@ import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import RecognitionPage from './RecognitionPage/RecognitionPage';
 import AdminPanel from './AdminPanel/AdminPage';
 
+import 'bootstrap/dist/css/bootstrap.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./assets/css/animate.min.css";
 import "./assets/sass/light-bootstrap-dashboard-react.scss?v=1.3.0";

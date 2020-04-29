@@ -9,7 +9,7 @@ class Register extends Component {
     componentDidMount(){
         console.log(this.props.data.name)
         console.log(this.props.data.image)
-        fetch(this.props.data.image)
+        /*fetch(this.props.data.image)
         .then(res => res.blob())
         .then(blob => {
             
@@ -29,8 +29,19 @@ class Register extends Component {
                     })
                 
             })
-        })
-    }
+        })*/
+        console.log(this.props.data)
+        fetch('http://127.0.0.1:5000/api/diet' , {
+                method: "POST",
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify(this.props.data)
+                })
+                .then((result) => result.json())
+                .then((info) => { console.log(info); })
+
+                    }
     
     render(){
         const {name, image} = this.props.data;

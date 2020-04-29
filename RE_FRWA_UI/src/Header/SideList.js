@@ -36,9 +36,10 @@ class SideList extends React.Component {
                             <br/>
                         <Link to={"/register"}><button className="sidemenu_button" >Register</button></Link>
                         <Link to={"/recognition"}><button className="sidemenu_button">Mark Presence</button></Link>
+                        <Link to={"/recommend"}><button className="sidemenu_button">Recommend Diet</button></Link>
                         <Link to={"/admin"}><button className="sidemenu_button">Reports</button></Link>
                         <Link to={"/menu"}><button className="sidemenu_button">Add Menu</button></Link>
-
+                        
                         <button className="sidemenu_button" onClick={() => this.props.logout()}>Logout</button>
                         </div>
                     }

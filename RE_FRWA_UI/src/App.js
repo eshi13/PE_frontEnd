@@ -5,6 +5,8 @@ import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import RecognitionPage from './RecognitionPage/RecognitionPage';
 import AdminPanel from './AdminPanel/AdminPage';
 import MenuPage from './MenuPage/MenuPage';
+import RecommendPage from './RecommendPage/RecommendPage';
+
 class App extends React.Component{
   state = {
     loggedIn: false
@@ -33,7 +35,7 @@ class App extends React.Component{
             <Route exact path="/register" render={() => <DataTrainPage logout={() => this.setLogout()} /> } />
             <Route exact path="/admin" render={() => <AdminPanel logout={() => this.setLogout()} />} />
             <Route exact path="/menu" render={() => <MenuPage logout={() => this.setLogout()} />} />
-
+            <Route exact path="/recommend" render={() => <RecommendPage logout={() => this.setLogout()} />} />
           </div>
         </Router>
 

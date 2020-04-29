@@ -20,11 +20,13 @@ class DataTrainPage extends Component {
         stage: "1",
         height: "",
         weight: "",
+        valid: "0"
     }
 
     getName = (name) => {
         this.setState({
             name,
+            valid: '0',
             stage: '2'
         })
     }
@@ -42,6 +44,32 @@ class DataTrainPage extends Component {
             stage: '4'
         })
     }
+    getUname = (uname) =>{
+        this.setState({
+            uname
+        })
+
+        fetch('http://127.0.0.1:5000/api/names' , {
+                method: "GET",
+                
+                })
+                .then((result) => result.json())
+                .then((info) => { const names = info['data'] 
+                var merged = [].concat.apply([], names);
+                if(merged.includes(uname)){
+                    this.setState({
+                        valid:'2'
+                    })
+                }
+                else{
+                    this.setState({
+                        valid: '1'
+                    })
+                }
+            })
+        
+            
+    }
     getHeight = (height) =>{
         this.setState({
             height
@@ -52,9 +80,14 @@ class DataTrainPage extends Component {
             weight
         })
     }
-    getAnaemia = (anaemia) =>{
+    getAge = (age) =>{
         this.setState({
-            anaemia
+            age
+        })
+    }
+    getGender = (gender) =>{
+        this.setState({
+            gender
         })
     }
     getIron = (iron) =>{
@@ -90,7 +123,8 @@ class DataTrainPage extends Component {
             name: '',
             email: '',
             image: '',
-            stage: '1'
+            stage: '1',
+            valid: '0'
         })
     }
 
@@ -111,10 +145,12 @@ class DataTrainPage extends Component {
                                 <ClickPhoto name={this.state.name} getImage={(image)=>this.getImage(image)}/>
                             :
                                 this.state.stage == '4'?
-                                    <Diet name={this.state.name} getDiet = {() => this.getDiet()}
+                                    <Diet name={this.state.name} valid = {this.state.valid} getDiet = {() => this.getDiet()}
                                     getHeight = {(height)=>this.getHeight(height)} 
                                     getWeight={(weight)=>this.getWeight(weight)}
-                                    getAnaemia={(anaemia)=>this.getAnaemia(anaemia)}
+                                    getAge={(age)=>this.getAge(age)}
+                                    getGender={(gender)=>this.getGender(gender)}
+                                    getUname={(uname)=>this.getUname(uname)}
                                     getIron ={(iron) => this.getIron(iron)}
                                     getDiabetic ={(diabetes) => this.getDiabetic(diabetes)}
                                     getCalcium ={(calcium) => this.getCalcium(calcium)}

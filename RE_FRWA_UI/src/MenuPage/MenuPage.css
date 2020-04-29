@@ -1,0 +1,24 @@
+.menuPage{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    /* 95B9C7 */
+    height: 60%;
+    width: 50%;
+    margin:auto;
+
+}
+@media screen and (max-width: 600px) {
+    .menuPage {
+      width: 85%;
+    }
+  }
+
+.menuPage .mainDiv{ 
+border-radius: 20px;
+display: flex;
+justify-content: center;
+flex-direction: column;
+margin:  auto;
+padding: 20px 50px;
+}

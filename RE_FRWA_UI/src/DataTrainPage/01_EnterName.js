@@ -2,7 +2,6 @@ import React from 'react';
 import { Button, TextField } from '@material-ui/core';
 
 function EnterName(props) {
-  const greeting = 'Hello Function Component!';
   return  (
       <div style={{display:'flex',flexDirection:'column', alignItems:'center'}}>
         <span style={{fontSize:40, fontWeight:'20px'}}>Hi, Enter your name..</span>
