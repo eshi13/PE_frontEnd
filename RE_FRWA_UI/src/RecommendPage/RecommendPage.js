@@ -3,7 +3,7 @@ import background from '../images/background3.jpg'
 import Header from '.././Header/Header'
 import Username from './UserName'
 import Recommend from './Recommend'
-import "../DataTrainPage/DataTrainPage.css"
+import "./Recommend.css"
 
 export class RecommendPage extends Component {
     state = {
@@ -38,7 +38,7 @@ export class RecommendPage extends Component {
         return (
             <div className="dataTrainPage" style={{backgroundImage: "url("+background+")",backgroundSize: 'cover', overflow: 'hidden'}}>
                 <Header logout={()=> this.props.logout()}/>
-                    <div classname = "mainDiv">
+                    <div className = "mainDiv">
                 {
                     this.state.stage == '0'?
                         <Username getName = {this.getName} />

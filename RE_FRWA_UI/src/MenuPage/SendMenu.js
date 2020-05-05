@@ -33,43 +33,28 @@ export class SendMenu extends Component {
     render() {
         console.log(this.state.nutritions)
         return (
+            <div style={{display:'flex',flexDirection:'column', alignItems:'center', marginBottom:20}}>
+            <span style={{fontSize:40, fontWeight:'20px'}}>
+                {this.state.data}
+            </span>
             
-            <div style = {{ marginTop:10}}>
-                <Table dark>
-                <thead>
-                    <tr>
-                    <th>Dish Name</th>
-                    <th>Protein</th>
-                    <th>Vitamin</th>
-                    <th>Fats</th>
-                    <th>Calories</th>
-                    <th>Iron</th>
-                    <th>Calcium</th>
-                    <th>Carb</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    {
-                    this.state.nutritions.map((row) => (
-                    <tr >
-
-                    <td>{row[0]}</td>
-                    <td>{row[1]}</td>
-                    <td>{row[2]}</td>
-                    <td>{row[3]}</td>
-                    <td>{row[4]}</td>
-                    <td>{row[5]}</td>
-                    <td>{row[6]}</td>
-                    <td>{row[7]}</td>
-                    </tr>
-                    )) 
-                    }
-                </tbody>
-                </Table>
-                
-                
+            <div style={{display:'flex'}}>
+                <Link to={"/menu"}>
+                    <Button 
+                        variant="contained" 
+                        style={{backgroundColor:'black', color:'white', fontWeight:'bold', borderWidth:1, borderColor:'black', width:300, marginRight:15}}
+                        onClick={()=>this.props.gotoStage1()}>Add another menu</Button>
+                </Link>
+                <Link to={"/recommend"}>
+                    <Button 
+                        variant="contained" 
+                        style={{backgroundColor:'black', color:'white', fontWeight:'bold', borderWidth:1, borderColor:'black', width:300, marginLeft:15}}
+                        >Go to Diet Recommendation</Button>
+                </Link>
             </div>
+        </div>
+            
+           
         )
     }
 }

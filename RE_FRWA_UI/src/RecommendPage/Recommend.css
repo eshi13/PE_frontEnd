@@ -1,0 +1,70 @@
+.dataTrainPage{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    /* 95B9C7 */
+    height: 100vh;
+    
+
+}
+
+.dataTrainPage .mainDiv{ 
+border-radius: 20px;
+display: flex;
+justify-content: center;
+flex-direction: column;
+margin:  auto;
+padding: 20px 50px;
+
+}
+.dietStyle {
+    
+    background-color: white;
+    position: relative;
+    overflow-y: scroll;
+    height: 40%;
+    margin-bottom:20px;
+    padding: 10px;
+    overflow-x: hidden;
+    border-width:4px;
+    border-style:inset;
+}
+.outerStyle {
+    height:100%;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 5px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(3, 0, 5); 
+    border-radius: 5px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00adb3; 
+  }
+  .card-img-top-vitamin {
+    width: 100%;
+    height: 13vw;
+    object-fit: cover;
+}
+.card-img-top-diabetes {
+    width: 100%;
+    height: 13vw;
+    object-fit: cover;
+}
+.list-group-item {
+    font-size: 13px;
+    padding: 5px;
+}

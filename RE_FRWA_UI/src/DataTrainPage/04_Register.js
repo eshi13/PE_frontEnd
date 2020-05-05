@@ -41,7 +41,7 @@ class Register extends Component {
                 .then((result) => result.json())
                 .then((info) => { console.log(info); })
 
-                    }
+        }
     
     render(){
         const {name, image} = this.props.data;
